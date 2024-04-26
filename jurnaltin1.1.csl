@@ -9,7 +9,7 @@
     </author>
     <category citation-format="author-date"/>
     <category field="science"/>
-    <updated>2024-04-26T09:07:38+00:00</updated>
+    <updated>2024-04-26T12:50:55+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="id">
@@ -482,7 +482,7 @@
               <group delimiter=" ">
                 <choose>
                   <if type="paper-conference" match="any">
-                    <text variable="container-title" font-style="italic"/>
+                    <text variable="container-title" font-style="italic" suffix=". "/>
                   </if>
                   <else>
                     <text term="edition" form="symbol" prefix="(" suffix=")"/>
