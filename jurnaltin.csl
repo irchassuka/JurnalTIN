@@ -9,7 +9,7 @@
     </author>
     <category citation-format="author-date"/>
     <category field="science"/>
-    <updated>2024-04-26T08:06:53+00:00</updated>
+    <updated>2024-04-26T09:07:38+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="id">
@@ -338,7 +338,7 @@
   </macro>
   <macro name="pages">
     <group delimiter="; ">
-      <group>
+      <group prefix=" ">
         <label plural="never" suffix=" " variable="page" form="short"/>
         <text variable="page"/>
       </group>
@@ -477,12 +477,19 @@
             <text variable="original-title" font-style="italic" prefix=" Terjemahan dari: " suffix="."/>
             <text variable="note" prefix=" Ed ke-" suffix="."/>
           </if>
-          <else-if type="chapter paper-conference entry-dictionary entry-encyclopedia" match="any">
+          <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="any">
             <group prefix=" " delimiter=" " suffix=".">
               <group delimiter=" ">
-                <text term="edition" form="symbol" prefix="(" suffix=")"/>
-                <text macro="editor" suffix="."/>
-                <text variable="container-title" font-style="italic" suffix="."/>
+                <choose>
+                  <if type="paper-conference" match="any">
+                    <text variable="container-title" font-style="italic"/>
+                  </if>
+                  <else>
+                    <text term="edition" form="symbol" prefix="(" suffix=")"/>
+                    <text macro="editor" suffix="."/>
+                    <text variable="container-title" font-style="italic" suffix="."/>
+                  </else>
+                </choose>
               </group>
               <text macro="volume" suffix="."/>
               <text macro="edition"/>
